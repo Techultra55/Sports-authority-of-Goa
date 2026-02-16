@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Grounds</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <!-- Modern UI CSS -->
+      <link rel="stylesheet" href="css/modern-ui.css">
+      <!-- AOS Animation CSS -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <style>
+         .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px; /* Reduced map size */
+            margin: 30px auto;
+         }
+         .map-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+         }
+         .map-pin {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #dc3545;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: transform 0.3s;
+            z-index: 10;
+         }
+         .map-pin:hover {
+            transform: scale(1.5);
+            background-color: #007bff;
+         }
+         .pin-tooltip {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            display: none;
+            z-index: 20;
+         }
+         .map-pin:hover .pin-tooltip {
+            display: block;
+         }
+         /* Approximate positions for Goa */
+         .pin-pernem { top: 8%; left: 38%; } /* Pernem (Northmost) */
+         .pin-peddem { top: 22%; left: 32%; } /* Mapusa (North) */
+         .pin-campal { top: 35%; left: 28%; } /* Panaji (Central-North) */
+         .pin-taleigao { top: 38%; left: 29%; } /* Taleigao (Near Panaji) */
+         .pin-ponda { top: 45%; left: 55%; } /* Ponda (Central) */
+         .pin-tilak { top: 52%; left: 18%; } /* Vasco (Coastal) */
+         .pin-chicalim { top: 52%; left: 23%; } /* Chicalim (Near Vasco) */
+         .pin-fatorda { top: 65%; left: 40%; } /* Margao (South) */
+         .pin-canacona { top: 88%; left: 45%; } /* Canacona (Southmost) */
+      </style>
+   </head>
+   <body>
+      <!-- Header -->
+      <div class="header_section" data-aos="fade-down">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand" href="index.html">Sports Authority of Goa</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="tradionalSp.html">Traditional Goan Sports</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="athelets.html">Athletes</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="grounds.html">Grounds</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="upcoming.html">Upcoming Events</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="past.html">Past Events</a>
+                     </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                     <div class="login_btn">
+                        <ul>
+                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
+                  </form>
+               </div>
+            </nav>
+         </div>
+      </div>
+      
+      <!-- Grounds Section -->
+      <div class="games_section layout_padding" style="padding-bottom: 100px; height: auto !important; overflow: visible;">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="games_taital">SAG Sports Grounds</h1>
+                  <p class="games_text">Discover the state-of-the-art sports grounds and complexes managed by the Sports Authority of Goa across the state.</p>
+               </div>
+            </div>
+            
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="map-container">
+                     <img src="./images/goa.jpg" class="map-image" alt="Map of Goa">
+                     
+                     <!-- Pins -->
+                     <div class="map-pin pin-pernem">
+                        <div class="pin-tooltip">SAG Ground, Pernem</div>
+                     </div>
+                     <div class="map-pin pin-peddem">
+                        <div class="pin-tooltip">Peddem Sports Complex, Mapusa</div>
+                     </div>
+                     <div class="map-pin pin-campal">
+                        <div class="pin-tooltip">Campal Sports Complex, Panaji</div>
+                     </div>
+                     <div class="map-pin pin-taleigao">
+                        <div class="pin-tooltip">Dr. SPM Stadium, Taleigao</div>
+                     </div>
+                     <div class="map-pin pin-tilak">
+                        <div class="pin-tooltip">Tilak Maidan, Vasco</div>
+                     </div>
+                     <div class="map-pin pin-chicalim">
+                        <div class="pin-tooltip">Chicalim SAG Ground</div>
+                     </div>
+                     <div class="map-pin pin-ponda">
+                        <div class="pin-tooltip">Ponda Sports Complex, Ponda</div>
+                     </div>
+                     <div class="map-pin pin-fatorda">
+                        <div class="pin-tooltip">PJN Stadium, Fatorda</div>
+                     </div>
+                     <div class="map-pin pin-canacona">
+                        <div class="pin-tooltip">Canacona Sports Complex</div>
+                     </div>
+                  </div>
+                  <p class="text-center mt-3 text-muted">Hover over the pins to see ground names.</p>
+               </div>
+            </div>
+
+            <div class="row mt-5">
+               <div class="col-md-12">
+                  <h2 class="games_taital">List of Major Grounds</h2>
+                  <div class="table-responsive">
+                     <table class="table table-bordered">
+                        <thead class="thead-light">
+                           <tr>
+                              <th>Name</th>
+                              <th>Location</th>
+                              <th>Facilities</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>Pandit Jawaharlal Nehru Stadium (Fatorda Stadium)</td>
+                              <td>Fatorda, Margao</td>
+                              <td>Football, Cricket, Athletics, Swimming Pool, Multi-purpose Hall</td>
+                           </tr>
+                           <tr>
+                              <td>Dr. Shyama Prasad Mukherjee Indoor Stadium</td>
+                              <td>Taleigao Plateau</td>
+                              <td>Indoor Sports (Badminton, Basketball, Table Tennis), Events</td>
+                           </tr>
+                           <tr>
+                              <td>Peddem Sports Complex</td>
+                              <td>Mapusa, North Goa</td>
+                              <td>Athletics, Swimming, Indoor Hall, Hockey, Football</td>
+                           </tr>
+                           <tr>
+                              <td>Campal Sports Complex</td>
+                              <td>Panaji, North Goa</td>
+                              <td>Football (Dayanand Bandodkar Ground), Swimming, Indoor Hall</td>
+                           </tr>
+                           <tr>
+                              <td>Tilak Maidan</td>
+                              <td>Vasco, South Goa</td>
+                              <td>Football</td>
+                           </tr>
+                           <tr>
+                              <td>Chicalim SAG Cricket Ground</td>
+                              <td>Chicalim, Vasco</td>
+                              <td>Cricket, Walking Track</td>
+                           </tr>
+                           <tr>
+                              <td>Ponda Sports Complex</td>
+                              <td>Ponda, South Goa</td>
+                              <td>Badminton, Swimming, Multi-purpose Hall</td>
+                           </tr>
+                           <tr>
+                              <td>Canacona Sports Complex</td>
+                              <td>Canacona, South Goa</td>
+                              <td>Football, Athletics</td>
+                           </tr>
+                           <tr>
+                              <td>SAG Ground, Pernem</td>
+                              <td>Pernem, North Goa</td>
+                              <td>Football, General Sports</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div style="height: 100px; clear: both;"></div>
+
+      <!-- Footer Section -->
+      <div class="footer_section layout_padding margin_top90" data-aos="fade-in" style="padding: 30px 0;">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-sm-6">
+                  <div class="footer_logo"><h3 class="navbar-brand" style="color: #fff;">Sports Authority of Goa</h3></div>
+                  <p class="footer_text">The Sports Authority of Goa is dedicated to promoting sports and youth activities across the state, fostering talent and providing state-of-the-art infrastructure.</p>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <h3 class="useful_text">Menu</h3>
+                  <div class="footer_menu">
+                     <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a class="nav-link" href="tradionalSp.html">Traditional Goan Sports</a></li>
+                        <li><a class="nav-link" href="athelets.html">Athletes</a></li>
+                        <li><a class="nav-link" href="grounds.html">Grounds</a></li>
+                        <li><a class="nav-link" href="upcoming.html">Upcoming Events</a></li>
+                        <li><a class="nav-link" href="past.html">Past Events</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <h1 class="useful_text">Useful Link</h1>
+                  <p class="dummy_text">Adipiscing Elit, sed do Eiusmod Tempor incididunt </p>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <h1 class="useful_text">Contact Us</h1>
+                  <div class="location_text">
+                     <ul>
+                        <li>
+                           <a href="#">
+                           <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">No.123 Chalingt Gates</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Call : +01 1234567890</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email : demo@gmail.com</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="social_icon">
+               <ul>
+                  <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text">2023 All Rights Reserved. Design by <a href="https://html.design">Free html  Templates</a></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- AOS Animation JS -->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+         AOS.init();
+      </script>
+   </body>
+</html>

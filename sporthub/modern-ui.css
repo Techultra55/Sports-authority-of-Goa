@@ -1,0 +1,149 @@
+/* Modern UI/UX Enhancements */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 14px;
+}
+
+/* Navbar Modernization */
+.header_section {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* Increase content width in navbar */
+.header_section .container {
+    max-width: 100%; /* Make the container take full width */
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Adjust navbar padding for full width content */
+.header_section .navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Button Enhancements */
+.read_bt a, .readmore_bt a, .send_bt a, .started_bt a {
+    border-radius: 50px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.read_bt a:hover, .readmore_bt a:hover, .send_bt a:hover, .started_bt a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Image Styling */
+.about_img img, .blog_img img, .contact_img img, .game_img img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+
+.about_img:hover img, .blog_img:hover img {
+    transform: scale(1.03);
+}
+
+/* Square Image for Cards */
+.square-image {
+    aspect-ratio: 1 / 1; /* Makes the image container square */
+    overflow: hidden; /* Ensures content outside the square is hidden */
+    display: flex; /* Use flexbox to center the image if needed */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Input Fields */
+.mail_text, .massage-bt {
+    border-radius: 15px !important;
+    border: 1px solid #e0e0e0 !important;
+    background: #f8f9fa !important;
+    padding: 15px 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+.mail_text:focus, .massage-bt:focus {
+    background: #fff !important;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.05) !important;
+    border-color: #ccc !important;
+}
+
+/* Footer */
+.footer_section {
+    position: relative;
+    z-index: 10;
+}
+
+.social_icon li a {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social_icon li a:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Logo Styling */
+.navbar-brand {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Taluka Heading Styling */
+.taluka_heading {
+    font-size: 28px !important;
+    color: #393938;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+/* Footer Logo Text Styling */
+.footer_logo .navbar-brand {
+    font-size: 20px; /* Adjust as needed for footer */
+    color: #fff !important;
+    text-shadow: none; /* Remove text shadow for footer logo */
+}
+
+/* Font Size Reductions */
+p { font-size: 14px !important; }
+.banner_taital { font-size: 40px !important; line-height: 1.3 !important; }
+.banner_text { font-size: 14px !important; }
+.about_taital { font-size: 32px !important; }
+.about_text { font-size: 14px !important; }
+.games_taital { font-size: 32px !important; }
+.games_text { font-size: 14px !important; }
+.basketball_text { font-size: 20px !important; }
+.lorem_text { font-size: 13px !important; }
+.blog_taital { font-size: 32px !important; }
+.client_taital { font-size: 32px !important; }
+.customer_name { font-size: 18px !important; }
+.enim_text { font-size: 14px !important; }
+.contact_taital { font-size: 32px !important; }
+.footer_text { font-size: 14px !important; }
+.useful_text { font-size: 18px !important; }
+.dummy_text { font-size: 14px !important; }
+.location_text { font-size: 14px !important; }
+.copyright_text { font-size: 14px !important; }
